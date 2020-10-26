@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: samstore-ing
+spec:
+  rules:
+  - host: samstore.skccvrd.kubepia.net
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: samstore
+          servicePort: http

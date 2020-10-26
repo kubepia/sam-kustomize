@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: samstore
+  labels:
+    app: samstore
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: samstore
+  template:
+    metadata:
+      labels:
+        app: samstore
+    spec:
+      containers:
+      - name: samstore
+        image: nogada/samstore:latest
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "100m"
+          limits:
+            memory: "200Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
+          name: tomcat
