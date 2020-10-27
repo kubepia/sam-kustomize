@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: samstore
-        image: nogada/samstore:latest
+        image: bekube/samstore:latest
         resources:
           requests:
             memory: "100Mi"
